@@ -1,39 +1,49 @@
 # DrinkServingRobot
 
-## Compilation Instructions
+A robust, console-based Java application designed to simulate and manage autonomous drink-serving robots in a restaurant environment. The system models dining area capacities, schedules robot shifts, tracks active/busy robot states in real-time, and enforces safe distancing guidelines to ensure safe operation around guests.
 
-This project is compiled using **IntelliJ IDEA** (or any compatible IDE) with **Java**. It has no external dependencies — only the Java Standard Library is required.
+## 🚀 Key Features
+
+*   **Smart Robot Scheduling:** Manages shift schedules for multiple robots (using custom IDs) and tracks their availability at any given time using a `HashMap`-based scheduler.
+*   **Real-time Busy-State Tracking:** Dynamically calculates robot busy durations based on order quantities and average service times, automatically releasing them once the duration expires.
+*   **Dining Area Capacity Control:** Simulates occupant capacities across five distinct dining zones (e.g., Main Dining Hall, Dining Foyer, Family Dining Room) using area-based rules.
+*   **Dynamic Distancing Safety Check:** Ensures passenger and guest safety by collecting and evaluating 4-directional proximity inputs (front, back, left, right) against a 1.0-meter safety threshold, generating warning reports for shortfalls.
+*   **Robust Input Validation:** Standardizes console input with looping validation rules for integers, doubles, custom robot IDs, yes/no flags, and time formats (including support for `"now"`).
+*   **Automated Audit Logging:** Keeps a persistent transaction log (`system_log.txt`) recording every initialization, status shift, collision alert, and system shutdown with timestamps.
+
+## 🛠️ Object-Oriented Design (OOP) Highlights
+
+*   **Inheritance:** Extends a generic `Robot` base class to create specialized `DrinkServingRobot` behavior.
+*   **Polymorphism & Overloading:** Leverages method overloading for flexible capacity checks and task executions, allowing the scheduling and safety engines to interact with robots polymorphically.
+*   **Robust Encapsulation:** Decouples console interactions and validation rules into utility classes (`InputValidator`, `SystemLogger`).
+
+---
+
+## How to Compile and Run (Terminal)
+
+This project has no external dependencies — only the Java Standard Library is required.
 
 ### Prerequisites
-- IntelliJ IDEA (or compatible IDE / command line `javac`)
-- Java JDK 11 or higher (uses `java.time` API)
+- Java JDK 11 or higher installed on your system (uses the `java.time` API).
 
-### Step-by-Step Compilation Guide
+### Command Line Guide
 
-1. **Open the Project**
-   - Open IntelliJ IDEA
-   - Select "Open" and navigate to the `DrinkServingRobot-main` project directory
-   - All source `.java` files are in the root directory of the project
+1. **Open your Terminal, PowerShell, or Command Prompt** and navigate to the project directory:
+   ```powershell
+   cd "c:\Users\shuen\Desktop\DrinkServingRobot-main"
+   ```
 
-2. **Configure Java Version**
-   - Go to `File` → `Project Structure` → `Project`
-   - Set `Project SDK` to Java 11 or higher
-   - Set `Project language level` accordingly
+2. **Compile the Project**:
+   Compile all `.java` files in the directory:
+   ```powershell
+   javac *.java
+   ```
 
-3. **Compile the Project**
-   - In IntelliJ, use `Build` → `Build Project` to compile all classes
-   - Alternatively, from the command line in the project root:
-     ```
-     javac *.java
-     ```
-
-4. **Run the Application**
-   - Run the `javacoursework` class as the entry point
-   - In IntelliJ, right-click `javacoursework.java` and select `Run 'javacoursework.main()'`
-   - From the command line:
-     ```
-     java javacoursework
-     ```
+3. **Run the Application**:
+   Execute the application entry point class `javacoursework`:
+   ```powershell
+   java javacoursework
+   ```
 
 ### Dependencies
 This project uses only Java Standard Library packages:
