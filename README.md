@@ -19,7 +19,18 @@ A robust, console-based Java application designed to simulate and manage autonom
 
 ---
 
-## How to Compile and Run (Terminal)
+## 🚀 Quick Start (For General Users)
+
+You can run this application without installing Java or setting up any development environment:
+
+1. Go to the **Releases** section on the right side of this GitHub repository page.
+2. Download the latest **`DrinkServingRobot.zip`** asset.
+3. Extract the downloaded `.zip` file on your computer.
+4. Open the extracted folder and double-click **`DrinkServingRobot.exe`** to launch the program immediately.
+
+---
+
+## 💻 How to Compile and Run from Source (Developers)
 
 This project has no external dependencies — only the Java Standard Library is required.
 
